@@ -1,0 +1,21 @@
+# Copyright (c) 2020 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved.
+
+trigger:
+  batch: false
+  branches:
+    include:
+      - master
+
+pr:
+  autoCancel: true
+  branches:
+    include:
+      - master
+
+jobs:
+  - job: git_sha
+    pool:
+      name: 'testing'
+    steps:
+      - bash: |
+          exit 0
